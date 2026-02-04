@@ -1,0 +1,98 @@
+{
+  "brand_identity": {
+    "name": "LASAMBUS Portal",
+    "tone": "Urgent, Professional, Trustworthy, Clinical",
+    "colors": {
+      "primary": {
+        "name": "Lagos Medical Blue",
+        "hex": "#0056b3",
+        "tailwind": "bg-blue-700"
+      },
+      "secondary": {
+        "name": "Lagos State Green",
+        "hex": "#008751",
+        "tailwind": "bg-green-600"
+      },
+      "accent": {
+        "name": "Emergency Red",
+        "hex": "#dc2626",
+        "tailwind": "bg-red-600"
+      },
+      "background": {
+        "light": "#f8fafc",
+        "dark": "#0f172a"
+      }
+    },
+    "typography": {
+      "headings": {
+        "family": "Manrope",
+        "weights": ["600", "700", "800"],
+        "usage": "Page titles, Modal headers, Key metrics"
+      },
+      "body": {
+        "family": "Public Sans",
+        "weights": ["400", "500"],
+        "usage": "Form labels, Data tables, Descriptions"
+      }
+    }
+  },
+  "design_strategies": {
+    "mobile_field_app": {
+      "theme": "Dark Mode Default (Night Ops)",
+      "layout": "Single-Column Card Stack",
+      "interaction": "Thumb-friendly large touch targets (min 48px height)",
+      "visuals": "High contrast text, minimal gradients, clear status indicators"
+    },
+    "admin_dashboard": {
+      "theme": "Light Mode Default (Clinical)",
+      "layout": "Bento Grid / Control Room",
+      "interaction": "Dense data tables, quick filters, export actions",
+      "visuals": "Clean white cards, subtle shadows, color-coded status badges"
+    }
+  },
+  "component_rules": {
+    "buttons": {
+      "primary": "rounded-full font-bold shadow-lg hover:shadow-xl transition-all active:scale-95",
+      "secondary": "rounded-full border-2 border-slate-200 hover:bg-slate-50",
+      "emergency": "rounded-full bg-red-600 text-white animate-pulse-slow shadow-red-500/50"
+    },
+    "cards": {
+      "style": "rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm",
+      "hover": "hover:border-blue-500/50 transition-colors duration-300"
+    },
+    "inputs": {
+      "style": "h-12 rounded-lg border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-slate-900"
+    },
+    "modals": {
+      "overlay": "backdrop-blur-md bg-slate-900/50",
+      "content": "rounded-2xl border border-slate-700 shadow-2xl animate-in fade-in zoom-in-95"
+    }
+  },
+  "assets": {
+    "images": {
+      "login_hero": "https://images.unsplash.com/photo-1762805080882-84c2d3855963?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxhbWJ1bGFuY2UlMjBlbWVyZ2VuY3klMjBsaWdodHMlMjBuaWdodHxlbnwwfHx8fDE3NjUxMzA2Mjd8MA&ixlib=rb-4.1.0&q=85",
+      "hospital_bg": "https://images.unsplash.com/photo-1764885518098-781b23d50e7f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBob3NwaXRhbCUyMGJ1aWxkaW5nJTIwZXh0ZXJpb3J8ZW58MHx8fHwxNzY1MTMwNjI4fDA&ixlib=rb-4.1.0&q=85",
+      "doctor_avatar": "https://images.unsplash.com/photo-1659353888242-e7c29b331c61?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjB1c2luZyUyMHRhYmxldCUyMG1lZGljYWx8ZW58MHx8fHwxNzY1MTMwNjMwfDA&ixlib=rb-4.1.0&q=85"
+    },
+    "icons": {
+      "library": "lucide-react",
+      "preferred_set": ["Ambulance", "Hospital", "Activity", "MapPin", "AlertCircle", "CheckCircle2", "XCircle"]
+    }
+  },
+  "implementation_steps": [
+    "1. Setup Tailwind theme with Lagos colors (Blue/Green/Red).",
+    "2. Create 'Layout' components: 'MobileLayout' (centered, max-w-md) and 'DashboardLayout' (sidebar + grid).",
+    "3. Build 'IncidentForm' with step-by-step validation. Use 'react-hook-form' + 'zod'.",
+    "4. Implement 'TransferModal' with distinct Green (Yes) and Red (No) zones.",
+    "5. Create 'BedAvailability' view using a card grid with status indicators.",
+    "6. Build 'AdminDashboard' with a data table (use @tanstack/react-table if available, or simple map).",
+    "7. Ensure all inputs have 'data-testid' attributes."
+  ],
+  "universal_guidelines": [
+    "Do not use generic gradients. Use solid colors or subtle noise textures.",
+    "Ensure 44px+ touch targets for all mobile interactions.",
+    "Use 'Sonner' for all toast notifications.",
+    "Dark mode is MANDATORY for the ambulance personnel view.",
+    "All forms must have client-side validation before submission."
+  ]
+}

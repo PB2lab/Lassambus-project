@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+}
+
+@layer base {
+    :root {
+        --background: 248 250 252;
+        --foreground: 15 23 42;
+        --card: 255 255 255;
+        --card-foreground: 15 23 42;
+        --popover: 255 255 255;
+        --popover-foreground: 15 23 42;
+        --primary: 3 139 92;
+        --primary-foreground: 255 255 255;
+        --secondary: 16 138 0;
+        --secondary-foreground: 255 255 255;
+        --muted: 241 245 249;
+        --muted-foreground: 100 116 139;
+        --accent: 220 38 38;
+        --accent-foreground: 255 255 255;
+        --destructive: 220 38 38;
+        --destructive-foreground: 255 255 255;
+        --border: 226 232 240;
+        --input: 226 232 240;
+        --ring: 3 139 92;
+        --radius: 0.75rem;
+    }
+    .dark {
+        --background: 15 23 42;
+        --foreground: 248 250 252;
+        --card: 30 41 59;
+        --card-foreground: 248 250 252;
+        --popover: 30 41 59;
+        --popover-foreground: 248 250 252;
+        --primary: 3 139 92;
+        --primary-foreground: 255 255 255;
+        --secondary: 16 138 0;
+        --secondary-foreground: 255 255 255;
+        --muted: 51 65 85;
+        --muted-foreground: 148 163 184;
+        --accent: 239 68 68;
+        --accent-foreground: 255 255 255;
+        --destructive: 239 68 68;
+        --destructive-foreground: 255 255 255;
+        --border: 51 65 85;
+        --input: 51 65 85;
+        --ring: 3 139 92;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .animate-pulse-slow {
+        animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+}
