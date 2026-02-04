@@ -1,0 +1,25 @@
+# Render.com Blueprint - Backend API
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: lasambus-api
+    runtime: python
+    region: oregon
+
+    # Build
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+
+    # Root directory
+    rootDir: backend
+
+    # Environment variables - set these in Render Dashboard
+    envVars:
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: lasambus
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
