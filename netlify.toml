@@ -1,0 +1,16 @@
+# Netlify build configuration for LASAMBUS frontend
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  base    = "frontend"
+  command = "npm run build"
+  publish = "build"
+
+# Redirect SPA routes to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200
+
+# Environment variables - set in Netlify Dashboard:
+# REACT_APP_BACKEND_URL = https://your-backend.onrender.com
